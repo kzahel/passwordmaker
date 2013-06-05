@@ -1,1 +1,1 @@
-zip -r package.zip javascripts manifest.json index.html background.js
+zip -r package.zip javascripts manifest.json icon*.png index.html background.js
