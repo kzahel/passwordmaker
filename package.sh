@@ -1,0 +1,1 @@
+zip -r package.zip javascripts manifest.json index.html background.js
