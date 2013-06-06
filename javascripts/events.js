@@ -6,8 +6,27 @@ function calc_pw(n) {
     var strength = document.getElementById("strength");
     var hmacObj = new jsSHA(pw_phrase.value, "TEXT");
     pw.value = hmacObj.getHMAC(keyword.value, "TEXT", "SHA-512", "B64").substring(5,15);
-    if (pw.value.search('!') === -1) pw.value = pw.value + '!'
-    if (pw.value.search(/[0-9]/) === -1) pw.value = pw.value + '0'
+
+
+      // now follow the weird additions to the passwords -- always adding a ! ... okay...
+
+      // some fucking stupid ass services want "at least two numbers"
+      // assholes.
+
+      // need a rule matching system to make sure this generates
+      // passwords that are "acceptable" to these fucking idiots.
+
+      if (keyword == 'vanguard') {
+
+          pw.value = pw.value + '01';
+
+      } else {
+
+          if (pw.value.search('!') === -1) pw.value = pw.value + '!'
+          if (pw.value.search(/[0-9]/) === -1) pw.value = pw.value + '0'
+
+      }
+
   } catch(e) {
     pw.value = "ERROR: " + e;
   }
