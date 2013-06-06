@@ -1,3 +1,9 @@
+function char_to_num(char) {
+    return char.charCodeAt(0) % 10;
+}
+
+
+
 function calc_pw(n) {
   try {
     var pw_phrase = document.getElementById("pw_phrase");
@@ -16,9 +22,15 @@ function calc_pw(n) {
       // need a rule matching system to make sure this generates
       // passwords that are "acceptable" to these fucking idiots.
 
-      if (keyword == 'vanguard') {
+      if (keyword.value == 'vanguard') {
 
-          pw.value = pw.value + '01';
+          // 6-10 characters, need at least two numbers
+
+          // mother fuckers!!!
+          
+          // turn the first two characters into numbers
+          pw.value = char_to_num(pw.value[0]) + char_to_num(pw.value[1]) + pw.value.slice(2, pw.value.length);
+
 
       } else {
 
