@@ -30,7 +30,11 @@ function calc_pw(n) {
           
           // turn the first two characters into numbers
           pw.value = char_to_num(pw.value[0]) + char_to_num(pw.value[1]) + pw.value.slice(2, pw.value.length);
+      } else if (keyword.value == 'bofa') {
+          // no ! and shit, fuckers
 
+          pw.value = char_to_num(pw.value[0]) + char_to_num(pw.value[1]) + pw.value.slice(2, pw.value.length);
+          
 
       } else {
 
