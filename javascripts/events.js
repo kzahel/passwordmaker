@@ -30,6 +30,22 @@ function calc_pw(n) {
           
           // turn the first two characters into numbers
           pw.value = char_to_num(pw.value[0]) + char_to_num(pw.value[1]) + pw.value.slice(2, pw.value.length);
+      } else if (keyword.value == 'amex') {
+          // Only the following special characters are allowed: %,&, _, ?, #, =, -
+
+/*
+
+Must be different from your User ID
+Must contain 8 to 20 characters, including one letter and number
+May include the following characters: %,&, _, ?, #, =, -
+Your new password cannot have any spaces and will not be case sensitive.
+
+*/
+
+          pw.value = char_to_num(pw.value[0]) + char_to_num(pw.value[1]) + pw.value.slice(2, pw.value.length);
+          pw.value = pw.value.replace(/\+/g,'_');
+
+
       } else if (keyword.value == 'bofa') {
           // no ! and shit, fuckers
 
