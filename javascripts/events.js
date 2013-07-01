@@ -108,5 +108,14 @@ document.getElementById('keyword2').addEventListener('keyup', function(){calc_pw
 document.getElementById('keyword3').addEventListener('keyup', function(){calc_pw(3)});
 document.getElementById('keyword4').addEventListener('keyup', function(){calc_pw(4)});
 document.getElementById('keyword5').addEventListener('keyup', function(){calc_pw(5)});
+
+for (var i=1; i<=5; i++) {
+    document.getElementById('pw'+i).addEventListener('click', function(evt) {
+        console.log('click on field',evt,this);
+        this.focus();
+        this.select();
+    });
+}
+
 },300);
 
