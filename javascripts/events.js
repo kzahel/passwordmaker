@@ -46,7 +46,7 @@ Your new password cannot have any spaces and will not be case sensitive.
           pw.value = pw.value.replace(/\+/g,'_');
 
 
-      } else if (keyword.value == 'bofa') {
+      } else if (keyword.value == 'bofa' || keyword.value == 'ing') {
           // no ! and shit, fuckers
 
           pw.value = char_to_num(pw.value[0]) + char_to_num(pw.value[1]) + pw.value.slice(2, pw.value.length);
